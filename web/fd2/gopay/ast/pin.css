@@ -1,0 +1,110 @@
+
+.bot {
+    position: fixed;
+    bottom: 20px;
+}
+.box-input-pin {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1.5px solid #c2c2c2;
+}
+.box-input-pin .clear {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 99;
+}
+.box-input-pin .inppin:valid {
+    background: none;
+    font-size: 15px;
+    color: #000;
+    height: 15px;
+    width: 10px;
+}
+.box-input-pin .inppin {
+    width: 10px;
+    height: 10px;
+    background: #c2c2c2;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    margin-right: 20px;
+    text-align: center;
+    color: transparent;
+    font-size: 1px;
+}
+.box-input-pin .inpotp:focus {
+    background: var(--ovo4);
+}
+.box-input-pin .inpotp {
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    background: #f0f0f0;
+    border-radius: 80px;
+    outline: none;
+    border: none;
+    margin-right: 2px;
+    margin-left: 20px;
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    caret-color: var(--ovo1);
+}
+.alert {
+    color: red;
+}
+form .timer {
+    background: #fff;
+    height: 30px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    width: 65px;
+}
+form .timer .wait {
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--ovo1);
+    border-bottom: 2px solid #fff;
+    border-radius: 50%;
+    animation: 1s spin linear infinite;
+    -webkit-animation: 1s spin linear infinite;
+    -moz-animation: 1s spin linear infinite;
+    -ms-animation: 1s spin linear infinite;
+    -o-animation: 1s spin linear infinite;
+}
+form .timer #countdown {
+    font-size: 12px;
+    height: 13px;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+@-moz-keyframes spin {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+@-ms-keyframes spin {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+@-o-keyframes spin {
+    0% {
+        transform: rotate(360deg);
+    }
+}
